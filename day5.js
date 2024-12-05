@@ -25,12 +25,12 @@ const part2 = pages
     let sorted = false;
     while (!sorted) {
       sorted = true;
-      for (const [a, b] of rules) {
-        const aI = page.indexOf(a);
-        const bI = page.indexOf(b);
-        if (aI !== -1 && bI !== -1 && bI < aI) {
+      for (const [l, r] of rules) {
+        const a = page.indexOf(l);
+        const b = page.indexOf(r);
+        if (a !== -1 && b !== -1 && b < a) {
           sorted = false;
-          [page[aI], page[bI]] = [page[bI], page[aI]];
+          [page[a], page[b]] = [page[b], page[a]];
         }
       }
     }
